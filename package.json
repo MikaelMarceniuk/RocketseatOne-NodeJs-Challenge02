@@ -1,0 +1,14 @@
+{
+  "name": "rocketseatone-nodejs-challenge02",
+  "version": "1.0.0",
+  "description": "Second challenge of NodeJs formation.",
+  "author": "Mikael Marceniuk",
+  "license": "ISC",
+  "scripts": {
+    "start:dev": "",
+    "start:prod": "",
+    "build": "",
+    "test": "",
+    "lint": ""
+  }
+}
