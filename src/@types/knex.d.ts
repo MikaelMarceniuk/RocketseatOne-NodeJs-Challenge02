@@ -6,7 +6,17 @@ declare module "knex/types/tables" {
     name: string
   }
 
+  interface Meal {
+    id: string
+    userId: string
+    name: string
+    description: string
+    mealTime: string
+    inDiet: boolean
+  }
+
   interface Tables {
     user: User
+    meal: Meal
   }
 }
