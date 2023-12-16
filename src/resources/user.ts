@@ -10,8 +10,14 @@ export default async (app: FastifyInstance) => {
     })
     const { name } = userSchema.parse(req.body)
 
-    await knex("user").insert({ id: randomUUID(), name })
+    const [newUser] = await knex("user")
+      .insert({ id: randomUUID(), name })
+      .returning("*")
 
     res.statusCode = 201
+    res.setCookie("sessionId", newUser.id, {
+      path: "/",
+      maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+    })
   })
 }

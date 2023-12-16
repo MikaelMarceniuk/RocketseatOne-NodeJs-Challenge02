@@ -1,4 +1,5 @@
 import Fastify, { FastifyInstance } from "fastify"
+import cookie from "@fastify/cookie"
 import env from "./config/env"
 import knex from "./config/db"
 import userRouter from "./resources/user"
@@ -9,6 +10,7 @@ class App {
   async init() {
     this.app = Fastify()
     await this.runMigrations()
+    await this.loadMiddlewares()
     await this.loadRoutes()
   }
 
@@ -25,6 +27,10 @@ class App {
 
   private async runMigrations() {
     await knex.migrate.latest()
+  }
+
+  private async loadMiddlewares() {
+    await this.app.register(cookie)
   }
 
   private async loadRoutes() {

@@ -4,7 +4,7 @@
 
 - [ X ] Criar usuario, com as seguintes informações:
   - Nome
-- [ ] Deve ser possivel identificar o usuario entre as requisicoes
+- [ X ] Deve ser possivel identificar o usuario entre as requisicoes
 - [ ] O usuário só pode visualizar, editar e apagar as refeições o qual ele criou
 
 **Refeicao**
