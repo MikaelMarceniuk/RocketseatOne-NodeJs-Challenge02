@@ -3,6 +3,7 @@ import cookie from "@fastify/cookie"
 import env from "./config/env"
 import knex from "./config/db"
 import userRouter from "./resources/user"
+import mealRouter from "./resources/meal"
 
 class App {
   app: FastifyInstance
@@ -36,6 +37,7 @@ class App {
   private async loadRoutes() {
     this.app.get("/api", async () => "Hello World!")
     await this.app.register(userRouter, { prefix: "/api/user" })
+    await this.app.register(mealRouter, { prefix: "/api/meal" })
   }
 }
 
