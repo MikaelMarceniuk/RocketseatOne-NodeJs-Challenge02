@@ -1,11 +1,13 @@
 import Fastify, { FastifyInstance } from "fastify"
 import env from "./config/env"
+import knex from "./config/db"
 
 class App {
   app: FastifyInstance
 
   async init() {
     this.app = Fastify()
+    await this.runMigrations()
   }
 
   async listen() {
@@ -17,6 +19,10 @@ class App {
 
       console.log("Server is up and running")
     })
+  }
+
+  private async runMigrations() {
+    await knex.migrate.latest()
   }
 }
 
