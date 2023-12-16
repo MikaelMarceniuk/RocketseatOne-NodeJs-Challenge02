@@ -35,3 +35,8 @@
 | [Knex.js](https://knexjs.org/)                 |
 | [Vitest](https://vitest.dev/)                  |
 | [Zod](https://zod.dev/)                        |
+
+## TODOS
+
+- [ ] e2e testing
+- [ ] Documentation
